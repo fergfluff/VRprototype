@@ -1,0 +1,2 @@
+# VRprototype
+Becoming is a virtual reality prototype in which two visitors become historical figures who contributed to environmental justice, Wangari Maathai (1940 - 2011) and Rachel Carson (1907 - 1964). Visitors work together as a pair to complete interactions that tell the story of each historical figure, as they embody designed avatars of Maathai and Carson and explore their unique environments in Virtual Reality. 
