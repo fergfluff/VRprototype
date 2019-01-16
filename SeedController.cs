@@ -8,7 +8,7 @@ using UnityEngine.UI;
 // This script is using the UnityEngine.UI class
 // This script is the start of our state machine, see below.
 // This script eventually would handle displaying instructional text to players when they get close enough to game objects
-// When the raycast of the seed hits the dirt hole's game object's collider...
+// This script also handles when the raycast of the seed hits the dirt hole's game object's collider...
 // The seed is deparented from the player's hand
 // The seed's gravity is turned on, its X and Z position and rotation is frozen, and it's given a mass of 3
 
