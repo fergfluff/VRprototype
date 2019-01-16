@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-//FINAL SCRIPT
 
-//This script is attached to the seed object 
-//It is keeping track of a raycast of the seed
-//When the raycast hits the HOLE object's collider:
-// the seed is deparented from the player's hand 
-// the seed's gravity is turned on, its X and Z position and rotation is frozen, and it's given a mass of 3
+// This script is attached to the seed game object 
+// This script is using the UnityEngine.UI class
+// This script is the start of our state machine, see below.
+// This script eventually would handle displaying instructional text to players when they get close enough to game objects
+// When the raycast of the seed hits the dirt hole's game object's collider...
+// The seed is deparented from the player's hand
+// The seed's gravity is turned on, its X and Z position and rotation is frozen, and it's given a mass of 3
+
 
 
 
@@ -19,27 +21,13 @@ using UnityEngine.UI;
 //if state = 1
 //let player 2 pour water, state == 2 (state++)
 //if state = 2
-//if player pours water into hole, state == 3 (state++) 
-//if state = 3
-//let tree grow, state == 4 (state++)
-
-//show door, state == 5 
-//if players open door
-//scene equals rachel's scene
-
-//NETWORKING
-//Turn host and client identities into variables that track whether Rachel or Wangari has done things
-//Seed - put a transform network object on it, and link to the networking prefab list
-//Watering can - same
-//Water - these are physics, so don't jam up your data sending. Set the networking sync to 0.
-
+//let tree grow, state == 3 (state++)
 
 
 public class dropSeed_final : MonoBehaviour {
 
 
     public Rigidbody seedRigidBody_final;
-    //public Transform holePosition_final;
     public GameObject tree_final;
     public int state_final = 0;
 
@@ -49,17 +37,12 @@ public class dropSeed_final : MonoBehaviour {
     public float distanceToSeed;
 
     //public GameObject WangariAudioPlayer;
-
     //AudioSource WangariAudio;
 
 
-
-
-    // Use this for initialization
     private void Start()
     {
         seedRigidBody_final = GetComponent<Rigidbody>();
-       // holePosition_final = GetComponent<Transform>();
 
         handCollider = GameObject.FindWithTag("hand");
         handColliderPosition = handCollider.GetComponent<Transform>();
@@ -71,7 +54,6 @@ public class dropSeed_final : MonoBehaviour {
     }
 
 
-    // Update is called once per frame
     void Update () {
         RaycastHit hit;
         Ray rayDirection = new Ray(transform.position, Vector3.down);
@@ -82,8 +64,6 @@ public class dropSeed_final : MonoBehaviour {
         //PlantSeedText.gameObject.SetActive(false);
 
         //WangariAudio.Play();
-
-
 
         if (state_final == 0) {
 
